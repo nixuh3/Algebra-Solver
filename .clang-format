@@ -35,10 +35,10 @@ AlignArrayOfStructures: Right
 #   AcrossEmptyLines: false
 #   AcrossComments: false
 #   AlignCaseColons: false
-# AlignEscapedNewlines: Right
+AlignEscapedNewlines: Left
 AlignOperands: DontAlign
 AlignTrailingComments:
-  Kind: Never
+  Kind: Always
   OverEmptyLines: 0
 # AllowAllArgumentsOnNextLine: true
 # AllowAllParametersOfDeclarationOnNextLine: true
@@ -91,7 +91,7 @@ AlwaysBreakTemplateDeclarations: Yes
 # BreakConstructorInitializers: BeforeColon
 # BreakInheritanceList: BeforeColon
 # BreakStringLiterals: true
-ColumnLimit: 110
+ColumnLimit: 100
 # CommentPragmas: "^ IWYU pragma:"
 # CompactNamespaces: false
 # ConstructorInitializerIndentWidth: 4
@@ -110,15 +110,6 @@ Cpp11BracedListStyle: false
 # IfMacros:
 #   - KJ_IF_MAYBE
 # IncludeBlocks: Preserve
-IncludeCategories:
-  - Regex: '^"pch\.h"$'
-    Priority: 0
-  - Regex: ^".*"$
-    Priority: 1
-  - Regex: ^<.*\.h>$
-    Priority: 2
-  - Regex: ^<.*>$
-    Priority: 3
 # IncludeIsMainRegex: "(Test)?$"
 # IncludeIsMainSourceRegex: ""
 # IndentAccessModifiers: false
@@ -180,7 +171,7 @@ RemoveSemicolon: true
 # SeparateDefinitionBlocks: Leave
 # ShortNamespaceLines: 1
 # SkipMacroDefinitionBody: false
-# SortIncludes: CaseSensitive
+SortIncludes: Never
 # SortJavaStaticImport: Before
 # SortUsingDeclarations: LexicographicNumeric
 # SpaceAfterCStyleCast: false
@@ -236,3 +227,4 @@ TabWidth: 4
 #   - NS_SWIFT_NAME
 #   - PP_STRINGIZE
 #   - STRINGIZE
+WrapNamespaceBodyWithEmptyLines: Always

@@ -1,9 +1,2 @@
 build/
 .vs/
-*.exe
-*.o
-*.d
-*.user
-*.slnx
-*.filters
-*.vcxproj

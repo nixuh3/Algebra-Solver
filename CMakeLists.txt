@@ -5,27 +5,20 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set(SOURCES
+    src/Main.cpp
+    src/Parser.cpp
+    src/Solver.cpp
+    src/Tokenizer.cpp
+    src/Utils.cpp
 
-file(GLOB_RECURSE PROJECT_SOURCES
-     CONFIGURE_DEPENDS
-     "${CMAKE_SOURCE_DIR}/src/*.cpp"
-     "${CMAKE_SOURCE_DIR}/src/*.hpp"
-     "${CMAKE_SOURCE_DIR}/src/*.h"
+    src/Parser.h
+    src/Solver.h
+    src/Tokenizer.h
+    src/Utils.h
 )
 
-add_executable(Algebra-Solver ${PROJECT_SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_include_directories(Algebra-Solver PRIVATE "${CMAKE_SOURCE_DIR}/src")
-
-target_compile_options(Algebra-Solver PRIVATE    
-    /EHsc
-    /Zc:preprocessor
-    /Zc:__cplusplus
-    $<$<CONFIG:Debug>:/Od /Zi /W4>
-    $<$<CONFIG:Release>:/O2 /GL /W3>
-)
-
-target_link_options(Algebra-Solver PRIVATE
-    $<$<CONFIG:Release>:/LTCG>
-)
+# Match VS filters to directory structure on disk
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${SOURCES})
