@@ -45,7 +45,7 @@ int main() {
             std::cout << "Infinite solutions\n";
         } else {
             for (double solution : solutions.Values) {
-                std::cout << FormatDouble(solution, 10) << "\n";
+                std::cout << FormatDouble(solution, 10) << "\n\n";
             }
         }
     }
